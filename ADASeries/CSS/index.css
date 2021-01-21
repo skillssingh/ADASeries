@@ -1,0 +1,15 @@
+header{
+    padding: 15px;
+    background-color: orange;
+}
+
+section, aside{
+    padding: 15px;
+    font-size: 1.3em;
+}
+
+footer{
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
