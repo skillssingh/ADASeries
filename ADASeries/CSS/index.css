@@ -1,5 +1,5 @@
 header{
-    padding: 15px;
+    padding: 5px 15px 5px 15px;
     background-color: orange;
 }
 
@@ -12,4 +12,28 @@ footer{
     padding: 15px;
     background-color: black;
     color: white;
+}
+
+h1{
+    font-size: 1.5em;
+}
+
+h3{
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.btn-secondary{
+    background-color: gray;
+    color: white;
+}
+
+.btn-secondary:hover{
+    background-color: darkslategray;
+    color: white;
+}
+
+.btn-secondary, .btn-primary{
+    margin-top: 15px;
 }
