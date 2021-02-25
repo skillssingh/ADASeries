@@ -37,3 +37,80 @@ h3{
 .btn-secondary, .btn-primary{
     margin-top: 15px;
 }
+
+img{
+    border-radius: 50%;
+}
+
+
+/*Dropdown style starts here*/
+
+button[aria-haspopup="true"] {
+  position: relative;
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 0;
+  text-align: left;
+}
+
+button[aria-haspopup="true"]::after {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top-color: currentColor;
+  border-bottom: 0;
+  content: "";
+}
+
+button[aria-haspopup="true"][aria-expanded="true"]::after {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top: 0;
+  border-bottom-color: currentColor;
+  content: "";
+}
+
+button[aria-haspopup="true"] + [role="listbox"] {
+  position: absolute;
+  margin: 0;
+  width: 85.5%;
+  max-height: 10em;
+  border-top: 0;
+  overflow-y: auto;
+}
+
+[role="listbox"] {
+  margin: 1em 0 0;
+  padding: 0;
+  min-height: 18em;
+  border: 1px solid #aaa;
+  background: white;
+}
+
+[role="option"] {
+  position: relative;
+  display: block;
+  padding: 0 1em 0 1.5em;
+  line-height: 1.8em;
+}
+
+[role="option"].focused {
+  background: #bde4ff;
+}
+
+[role="option"][aria-selected="true"]::before {
+  position: absolute;
+  left: 0.5em;
+  content: "✓";
+}
+
+.hidden {
+  display: none;
+}
