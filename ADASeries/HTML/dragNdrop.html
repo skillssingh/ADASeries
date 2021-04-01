@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../CSS/index.css" />
+</head>
+
+<body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<header>
+    <h1>Web Accessible Drag & Drop widget</h1>
+</header>
+</div>
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>Available colors:</h2>
+        </div>
+        <div class="col-xs-6">
+            <h2>Selected colors:</h2>
+        </div>
+    </div>
+</div>    
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-xs-6" aria-live="polite">
+            <ol data-draggable="target" aria-dropeffect="none" role="listbox" aria-label="list of available colors:">
+                <li data-draggable="item" role="listitem" draggable="true" aria-grabbed="false" aria-selected="false" tabindex="0">Red</li>
+                <li data-draggable="item" role="listitem" draggable="true" aria-grabbed="false" aria-selected="false" tabindex="0">Yellow</li>
+                <li data-draggable="item" role="listitem" draggable="true" aria-grabbed="false" aria-selected="false" tabindex="0">Green</li>
+            </ol>
+        </div>
+        <div class="col-xs-6">
+            <ol  data-draggable="target" aria-dropeffect="none" role="listbox" aria-label="list of selected colors:">
+                <li data-draggable="item" role="listitem" draggable="true" aria-grabbed="false" aria-selected="false" tabindex="0">White</li>
+                <li data-draggable="item" role="listitem" draggable="true" aria-grabbed="false" aria-selected="false" tabindex="0">Orange</li>
+            </ol>
+        </div>
+    </div>
+ </div>
+</div>
+    </div> 
+    <script type="text/javascript" src="../js/DragNDrop.js"></script>
+</body>
+
+</html>

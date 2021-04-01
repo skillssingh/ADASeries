@@ -18,6 +18,12 @@ h1{
     font-size: 1.5em;
 }
 
+h2{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 h3{
     font-size: 1em;
     font-weight: bold;
@@ -206,4 +212,71 @@ ul[role="menubar"] ul[role="menu"] li a {
 ul[role="menubar"] ul[role="menu"] a[aria-haspopup="true"]::after {
   //content: url('../assets/right-arrow-brown.png');
   padding-right: 2em;
+}
+
+/*style for drag and drop starts here*/
+/* draggable targets */
+[data-draggable="target"],ol
+{
+	float:left;
+	list-style-type:none;
+	
+	width:100%;
+	height:7.5em;
+	overflow-y:auto;
+	
+	margin:0em 2em 0.5em 0;
+	padding:0.5em;
+	
+	border:2px solid #222D65;
+	border-radius:0.2em;
+	
+	background:#222D65;
+	color:#fff;
+}
+
+/* drop target state */
+[data-draggable="target"][aria-dropeffect="move"]
+{
+	border-color:#222D65;
+
+	background:#222D65;
+}
+
+/* drop target focus and dragover state */
+[data-draggable="target"][aria-dropeffect="move"]:focus,
+[data-draggable="target"][aria-dropeffect="move"].dragover
+{
+	outline:none;
+	
+	box-shadow:0 0 0 1px #fff, 0 0 0 3px #68b;
+}
+
+/* draggable items */
+[data-draggable="item"]
+{
+	display:block;
+	list-style-type:none;
+	
+	margin:0 0 2px 0;
+	padding:0.2em 0.4em;
+	
+	border-radius:0.2em;
+	
+	line-height:1.3;
+}
+
+/* items focus state */
+[data-draggable="item"]:focus
+{
+	outline:none;
+	
+	box-shadow:0 0 0 2px #68b, inset 0 0 0 1px #ddd;
+}
+
+/* items grabbed state */
+[data-draggable="item"][aria-grabbed="true"]
+{
+	background:#2997D8;
+	color:#fff;
 }
