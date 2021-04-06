@@ -280,3 +280,15 @@ ul[role="menubar"] ul[role="menu"] a[aria-haspopup="true"]::after {
 	background:#2997D8;
 	color:#fff;
 }
+
+span.required, .errorDiv{
+    color: red;
+}
+
+.errorDiv ul{
+    padding-left: 15px;
+}
+
+.displayNone{
+    display: none;
+}
