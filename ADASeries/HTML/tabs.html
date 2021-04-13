@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous" />
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        
+        <link rel="stylesheet" href="../CSS/index.css"/>        
+    </head> 
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header>
+                        <h1>Web Accessible TABS Tutorial</h1>
+                    </header>
+                </div>
+<div class="col-xs-12 form-group">
+    <section class="accessibleTabsSection">
+        <form>
+            <ul id="ulTabs" role="tablist">
+                <li class="active liTabs" role="tab" aria-posinset="1" aria-setsize="3" aria-selected="true" tabindex="0" aria-controls="panel_1">
+                    <i class="fas fa-home"></i>
+                    Home
+                </li>
+                <li class="liTabs" role="tab" aria-posinset="2" aria-setsize="3" aria-selected="false" tabindex="0" aria-controls="panel_2">
+                    <i class="fas fa-edit"></i>
+                    About Us
+                </li>
+                <li class="liTabs" role="tab" aria-posinset="3" aria-setsize="3" aria-selected="false" tabindex="0" aria-controls="panel_3">
+                    <i class="fas fa-phone-alt"></i>
+                    Contact
+                </li>
+            </ul>
+              <div class="panels">
+                <article id="panel_1" class="active-panel" role="tabpanel" aria-hidden="false">
+                  <h2>Why do we need Web Accessibility?</h2>
+                    <p>To make sure that your Web application is available to all irrespective of the disability a person can have. Assistive technologies such as screen readers play a big role in bridging the gap, but they only work well if your web site has:</p>
+                    <ol>
+                        <li>
+                            Correct use of <u>HTML5 Semantics</u>,
+                        </li>
+                        <li>
+                            <u>CSS Harmony</u>: it supports 4.05:1 color contrast,
+                        </li>
+                        <li>
+                            Proper use of <u>ARAI Attributes</u> &amp;
+                        </li>
+                        <li>
+                            Good execution of <u>Javascript</u> to change the state of ARIA Attributes.
+                        </li>
+                    </ol>
+
+                </article>
+                <article id="panel_2" role="tabpanel" aria-hidden="true">
+                  <h2>Introducing Skills Singh:</h2>
+                    <p>Hi! I am Skills Singh, here to help you improve Web Accessiblity for your web application.
+                    </p>
+                    <p>
+                        I Publish a new video every <u>Friday at 10:30 AM EST</u>, that can certainly help you develop web applications, the right way.</p>
+                    <p>Please consider <b><u>SUBSCRIBING</u></b> to become the <b>BEST DEVELOPER</b> You can be.</p>
+                </article>
+                <article id="panel_3" role="tabpanel" aria-hidden="true">
+                  <h2>Feel free to contact me at:</h2>
+                    <p>You can reach me at er.param.03@gmail.com with your queries/feedback.</p>
+                </article>
+              </div>
+        </form>    
+    </section>
+</div>
+                <div class="col-xs-12">
+                    <footer>
+                        @copyrights 2021
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(".liTabs").on("click keypress",function(){
+                    // cache all li tags
+                     var $liTags=$(".liTabs");
+                    var $allPanels=$(".panels article[role='tabpanel']");
+                    
+                    // toggle aria attributes and active class
+                    $liTags.removeClass("active").attr("aria-selected","false");
+                    $(this).addClass("active").attr("aria-selected","true");
+                    
+                    $allPanels.attr("aria-hidden","true").removeClass("active-panel");
+                    $("#" + $(this).attr("aria-controls")).addClass("active-panel").attr("aria-hidden","false");
+                    
+                
+                    
+                });
+            });
+        </script>
+    </body>
+</html>
