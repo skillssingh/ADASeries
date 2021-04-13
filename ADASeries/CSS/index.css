@@ -340,5 +340,5 @@ span.required, .errorDiv{
   }
 
   .accessibleTabsSection .active-panel {
-    z-index: 1;
+    z-index: 1; 
   }
