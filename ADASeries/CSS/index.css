@@ -342,3 +342,8 @@ span.required, .errorDiv{
   .accessibleTabsSection .active-panel {
     z-index: 1; 
   }
+.productsDiv{
+    border: 1px solid #2997D8;
+    padding: 15px;
+    margin-top: 15px;
+}
