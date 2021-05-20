@@ -1,17 +1,23 @@
 header{
-    padding: 5px 15px 5px 15px;
-    background-color: orange;
+    padding: 5px 7.8px 5px 7.8px;
+    background-color: #C90066;
+    color: #fff;
+}
+header h1{
+    font-size: 2em;
 }
 
 section, aside{
-    padding: 15px;
+    padding: 7.8px;
     font-size: 1.3em;
 }
 
 footer{
-    padding: 15px;
-    background-color: black;
+    margin-top: 7.8px;
+    padding: 7.8px;
+    background-color: #014AB2;
     color: white;
+    text-align: center;
 }
 
 h1{
@@ -30,22 +36,40 @@ h3{
     text-decoration: underline;
 }
 
+.btn-primary{
+    background-color: #075AD7;
+    border-color: #075AD7;
+    height: 40px;
+}
+
+.btn-primary:focus,
+.btn-primary:hover{
+    background-color: #014AB2;
+    border-color: #014AB2;
+}
+
 .btn-secondary{
-    background-color: gray;
-    color: white;
+    background-color: #F5F5F5;
+    color: #333;
+    height: 40px;
 }
 
 .btn-secondary:hover{
-    background-color: darkslategray;
+    background-color: #63666A;
     color: white;
 }
 
 .btn-secondary, .btn-primary{
-    margin-top: 15px;
+    margin-top: 7.8px;
 }
 
 img{
     border-radius: 50%;
+}
+
+a{
+    color:#075AD7;
+    text-decoration: underline;
 }
 
 
@@ -57,6 +81,8 @@ button[aria-haspopup="true"] {
   width: 100%;
   border-radius: 0;
   text-align: left;
+    background-color: #075AD7;
+    color: #fff;
 }
 
 button[aria-haspopup="true"]::after {
@@ -86,10 +112,17 @@ button[aria-haspopup="true"][aria-expanded="true"]::after {
 button[aria-haspopup="true"] + [role="listbox"] {
   position: absolute;
   margin: 0;
-  width: 85.5%;
+  width: 91.5%;
   max-height: 10em;
   border-top: 0;
   overflow-y: auto;
+    background-color: #075AD7;
+    color: #fff;
+    z-index: 100;
+}
+
+.contentLabel{
+    font-weight: 100;
 }
 
 [role="listbox"] {
@@ -108,7 +141,7 @@ button[aria-haspopup="true"] + [role="listbox"] {
 }
 
 [role="option"].focused {
-  background: #bde4ff;
+  background: #014AB2;
 }
 
 [role="option"][aria-selected="true"]::before {
@@ -120,26 +153,33 @@ button[aria-haspopup="true"] + [role="listbox"] {
 .hidden {
   display: none;
 }
-.btn{margin-top: 15px;}
+.btn{margin-top: 7.8px;}
 
 .table_parent_div{
-    border: 1px solid #222D65;
-    padding: 15px;
+    border: 1px solid #014AB2;
+    padding: 7.8px;
 }
 
 .table_description_header{
-    margin-top: 15px;
-    color: #222D65;
+    margin-top: 7.8px;
+    color: #014AB2;
     text-decoration: underline;
     font-size: 1.4em;
 }
 
-.table_body_div,.table_header_div{
+.table_header_div{
     color: #fff;
-    background: #222D65;
+    background: #014AB2;
+    text-align: center;
+    font-size: 1.2em;    
+}
+
+.table_body_div{
+    color: #fff;
+    background: #075AD7;
     text-align: center;
     font-size: 1.2em;
-}
+} 
 
 .col-xs-3{
     border: 1px solid #fff;
@@ -153,21 +193,22 @@ ul[role="menubar"] {
   padding: 10px;
   font-size: 110%;
   list-style: none;
-  background-color: #222D65;
+  background-color: #014AB2;
+    font-size: 1.3em;
 }
 
 ul[role="menubar"] [role="menuitem"],
 ul[role="menubar"] [role="separator"] {
   padding: 0.25em;
-  background-color: #222D65;
-  border: 2px solid #222D65;
+  background-color: #014AB2;
+  border: 2px solid #014AB2;
 }
 
 ul[role="menubar"] [role="menuitem"]:focus,
 ul[role="menubar"] [role="menuitem"]:hover,
 ul[role="menubar"] [role="separator"]:focus,
 ul[role="menubar"] [role="separator"]:hover {
-  background-color: #2997D8;
+  background-color: #075AD7;
   color: #fff;
 }
 
@@ -222,25 +263,25 @@ ul[role="menubar"] ul[role="menu"] a[aria-haspopup="true"]::after {
 	list-style-type:none;
 	
 	width:100%;
-	height:7.5em;
+	height:7.8em;
 	overflow-y:auto;
 	
 	margin:0em 2em 0.5em 0;
 	padding:0.5em;
 	
-	border:2px solid #222D65;
+	border:2px solid #014AB2;
 	border-radius:0.2em;
 	
-	background:#222D65;
+	background:#014AB2;
 	color:#fff;
 }
 
 /* drop target state */
 [data-draggable="target"][aria-dropeffect="move"]
 {
-	border-color:#222D65;
+	border-color:#014AB2;
 
-	background:#222D65;
+	background:#014AB2;
 }
 
 /* drop target focus and dragover state */
@@ -277,7 +318,7 @@ ul[role="menubar"] ul[role="menu"] a[aria-haspopup="true"]::after {
 /* items grabbed state */
 [data-draggable="item"][aria-grabbed="true"]
 {
-	background:#2997D8;
+	background:#075AD7;
 	color:#fff;
 }
 
@@ -286,7 +327,7 @@ span.required, .errorDiv{
 }
 
 .errorDiv ul{
-    padding-left: 15px;
+    padding-left: 7.8px;
 }
 
 .displayNone{
@@ -306,19 +347,19 @@ span.required, .errorDiv{
     width: 33.33%;
     display: inline-block;
     line-height: 3;
-    background-color: #222D65;
+    background-color: #014AB2;
     color: #fff;
     text-align: center;
-      border-bottom: 1px solid #222D65;
+      border-bottom: 1px solid #014AB2;
   }
 
   .accessibleTabsSection ul li:focus, .accessibleTabsSection ul li:hover {
-    background-color: #2997D8;
+    background-color: #075AD7;
     color: white;
   }
 
   .accessibleTabsSection ul li.active {
-    background-color: #2997D8;
+    background-color: #075AD7;
     color: white;
   }
 
@@ -329,7 +370,7 @@ span.required, .errorDiv{
   }
 
   .accessibleTabsSection article {
-    background-color: #2997D8;
+    background-color: #075AD7;
     color: white;
     position: absolute;
     padding: 10px;
@@ -343,7 +384,149 @@ span.required, .errorDiv{
     z-index: 1; 
   }
 .productsDiv{
-    border: 1px solid #2997D8;
-    padding: 15px;
-    margin-top: 15px;
+    border: 1px solid #075AD7;
+    padding: 7.8px;
+    margin-top: 7.8px;
+}
+
+.ImageSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*code for horizontal progress bar starts here*/
+.progress{
+    height: 30px;
+    background-color:#222D65;
+}
+.progress-bar{
+    background-color: #2997D8;
+    line-height: 30px;
+}
+
+/*code for circular progress bar starts here*/
+.circular{
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+.circular .inner, .circular .outer, .circular .circle{
+  position: absolute;
+  z-index: 6;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
+.circular .inner{
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+.circular .circle{
+  z-index: 1;
+  box-shadow: none;
+}
+.circular .currentValue{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222D65;
+}
+.circular .bar{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #253B80;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.circle .bar .progress{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+.circle .bar .progress, .dot span{
+  background: #2997D8;
+}
+.circle .left .progress{
+  z-index: 1;
+  animation: left 7.8s linear both;
+}
+@keyframes left {
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.circle .right{
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.circle .right .progress{
+  animation: right 7.8s linear both;
+  animation-delay: 7.8s;
+}
+@keyframes right {
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.circle .dot{
+ /* z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 10px;
+  margin-top: -5px;
+  animation: dot 8s linear both;
+  transform-origin: 0% 50%;*/
+}
+.circle .dot span {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+@keyframes dot{
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(90deg);
+    z-index: 4;
+  }
+  100% {
+    transform: rotate(270deg);
+    z-index: 4;
+  }
+}
+
+.activeProgressDiv{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 25%;
+    transform: translate(0%, -50%);
+    z-index: 100;
+    height: 100%;
+}
+
+.inactiveStyle{
+    background-color:#8080806b;
+	opacity:0.3;
+	z-index:99;
 }
