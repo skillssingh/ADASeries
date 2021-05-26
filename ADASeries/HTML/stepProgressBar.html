@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../CSS/index.css" />
+
+    <title>HTML Step Progress Bar</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row mainPageDiv">
+            <div class="col-xs-12">
+                <header>
+                    <h1>Web Accessible Step Progress Bar</h1>
+                </header>
+            </div>
+<div class="col-xs-12">
+    <section role="main">
+        <form>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!--code for interactive step progress bar-->
+                    <!--<nav role="progressbar">
+                        <ol>
+                            <li class="step-container is-current" aria-current="true">
+                                <a href="#">
+                                    <p class="step-text">My Cart</p>
+                                    <div class="step-icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                </a>                                
+                            </li>
+                            <li class="step-container">
+                                <a href="#">
+                                    <p class="step-text">Payment</p>
+                                    <div class="step-icon">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                </a>    
+                            </li>
+                            <li class="step-container">
+                                <a href="#">
+                                    <p class="step-text">Ship To</p>
+                                    <div class="step-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                </a>    
+                            </li>
+                            <li class="step-container">
+                                <a href="#">
+                                    <p class="step-text">Shipped</p>
+                                    <div class="step-icon lastStep">
+                                        <i class="fas fa-truck"></i>
+                                    </div>
+                                </a>    
+                            </li>
+                        </ol>
+                    </nav>-->
+                    <!--code for non-interactive step progress bar-->
+                    <div id="stepProgressBar" role="group" aria-label="Step progress bar">
+                        <ol>
+                            <li class="step-container is-current" aria-current="true">
+                                <p class="step-text">My Cart</p>
+                                <div class="step-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                            </li>
+                            <li class="step-container">
+                                <p class="step-text">Payment</p>
+                                <div class="step-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </li>
+                            <li class="step-container">
+                                <p class="step-text">Ship To</p>
+                                <div class="step-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                            </li>
+                            <li class="step-container">
+                                <p class="step-text">Shipped</p>
+                                <div class="step-icon lastStep">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="announceProgress sr-only" aria-live="polite"></div>
+                </div>
+                <div id="main" class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <button class="btn btn-success form-control" type="button" id="nextBtn">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            const STEPS_LIST = [...$(".step-container")];
+
+            const MAX_STEPS = 4;
+            let currentStep = 1;
+            
+            $(".announceProgress").text($(".is-current .step-text").text() + " step " + currentStep + " of " + MAX_STEPS+ " is the current step");
+
+
+            /*next button click event handler*/
+            $("#nextBtn").on("click", function() {
+                
+                STEPS_LIST[currentStep - 1].classList.add('is-complete');
+                $(".step-container").removeClass("is-current");
+
+                STEPS_LIST[currentStep].classList.add('is-current');
+                
+                $(".step-container").removeAttr("aria-current");
+                $(".is-current").attr("aria-current","true");
+
+                currentStep += 1;
+                
+                $(".announceProgress").text($(".is-current .step-text").text() + " step " + currentStep + " of " + MAX_STEPS+ " is the current step");
+
+                if (currentStep === MAX_STEPS) {
+                    $(this).attr("disabled", true);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

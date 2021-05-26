@@ -530,3 +530,145 @@ span.required, .errorDiv{
 	opacity:0.3;
 	z-index:99;
 }
+
+
+/*style for Step progress bar starts here*/
+.progressDiv{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#stepProgressBar  {
+	display:  flex;
+	justify-content:  space-between;
+	align-items:  flex-end;
+	width:  100%;
+	margin:  0  auto;
+	margin-bottom:  40px;
+	margin-top:  40px;
+}
+
+#stepProgressBar ol{
+    width: 100%;
+    padding-left: 0px;
+}
+
+#stepProgressBar li{
+    display: inline-block;
+    width: 24%;
+}
+
+.step-container  {
+text-align:  center;
+}
+
+.step-text  {
+margin-bottom:  10px;
+color:  #53565A;
+}
+
+
+.step-icon {
+	border: 1px solid #53565A;
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+	color: #53565A;
+	display: inline-block;
+	position: relative;
+	transition: background-color 500ms;
+  line-height:40px;
+}
+
+
+.step-container.is-complete .step-icon  {
+	color:  white;
+	border: 1px solid #222D65;
+	background-color:  #222D65;
+}
+.step-container.is-current .step-icon  {
+	color:  white;
+	border: 1px solid #7cb342;
+	background-color:  #7cb342;
+}
+
+.step-icon::after {
+	content: '';
+	position: absolute;
+	bottom: 20px;
+	height: 1px;
+	width: 110px;
+    left: 38px;
+	background-color: #53565A;
+}
+
+.step-container.is-current .step-icon::after {
+	content: '';
+	position: absolute;
+	bottom: 20px;
+	height: 1px;
+	width: 110px;
+    left: 38px;
+	background-color: #7cb342;
+}
+
+.step-icon.lastStep::after {
+	content: '';
+	position: absolute;
+	bottom: 20px;
+	height: 1px;
+	width: 132px;
+	background-color: #fff !important;
+}
+
+.step-container.is-complete .step-icon::after {
+	content: '';
+	position: absolute;
+	bottom: 20px;
+	height: 1px;
+	width: 132px;
+	background-color: #222D65;
+}
+
+.step-container.is-current .step-icon::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    height: 2px;
+    width: 100%;
+    right: -2px;
+    background-color: #7cb342;
+}
+
+
+/* Base styles and helper stuff */
+.hidden  {
+	display:  none;
+}
+ 
+button  {
+	padding:  5px  10px;
+	border:  1px  solid  black;
+	transition:  250ms background-color;
+}
+
+button:hover  {
+	cursor:  pointer;
+	background-color:  black;
+	color:  white;
+}
+
+button:disabled:hover  {
+	opacity:  0.6;
+	cursor:  not-allowed;
+}
+
+.text-center  {
+	text-align:  center;
+}
+  
+.container  {
+	max-width:  400px;
+	margin:  0  auto;
+	margin-top:  20px;
+	padding:  40px;
+}
