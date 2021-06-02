@@ -547,16 +547,12 @@ span.required, .errorDiv{
 	margin-top:  40px;
 }
 
-#stepProgressBar ol{
-    width: 100%;
-    padding-left: 0px;
-}
+#stepProgressBar ol
 
 #stepProgressBar li{
     display: inline-block;
     width: 24%;
 }
-
 .step-container  {
 text-align:  center;
 }
@@ -671,4 +667,37 @@ button:disabled:hover  {
 	margin:  0  auto;
 	margin-top:  20px;
 	padding:  40px;
+}
+
+nav.navBreadCrumbs {
+  padding: 0.8em 1em;
+  border: 1px solid hsl(0, 0%, 90%);
+  border-radius: 4px;
+  background: hsl(300, 14%, 97%);
+}
+
+nav.navBreadCrumbs ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+nav.navBreadCrumbs li {
+  display: inline;
+}
+
+nav.navBreadCrumbs li + li::before {
+  display: inline-block;
+  margin: 0 0.25em;
+  content: '>';
+    color: #C90066;
+}
+nav.navBreadCrumbs a{
+    text-decoration: none;
+    color: #C90066;
+}
+nav.navBreadCrumbs [aria-current="page"] {
+  color: #008037;
+  font-weight: 700;
+    text-decoration: underline;
 }
