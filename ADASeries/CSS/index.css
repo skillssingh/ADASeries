@@ -1,8 +1,9 @@
 header{
-    padding: 5px 7.8px 5px 7.8px;
+    padding: 5px 15px 5px 15px;
     background-color: #C90066;
     color: #fff;
     margin-bottom: 15px;
+    margin-top: 15px;;
 }
 header h1{
     font-size: 2em;
