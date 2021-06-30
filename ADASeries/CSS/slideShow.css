@@ -1,0 +1,91 @@
+header{
+  padding: 5px 15px 5px 15px;
+  background-color: #C90066;
+  color: #fff;
+  margin-bottom: 15px;
+  margin-top: 15px;;
+}
+header h1{
+  font-size: 2em;
+} 
+#carouselButtons {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+} 
+
+.carousel-control span{
+ padding: 5px;
+ color: #fff;
+ width: auto;
+ height: auto;
+}
+
+.custom-carousel-indicators {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+} 
+
+.carousel-caption{
+  background-color: #393E46;
+  bottom: 10px;
+}
+
+.carousel a{
+  padding: 9px;
+}
+
+.custom-carousel-indicators a::before{
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 400;
+  font-size: 1.2em; 
+  content: "\f111";
+  color:#fff;
+  padding: 5px;
+}
+
+.custom-carousel-indicators #playPauseButton.pause a::before{
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 400;
+  content: "\f28b";
+  color:#fff;
+  padding: 5px;
+}
+
+.custom-carousel-indicators #playPauseButton.play a::before{
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 400;
+  content: "\f144";
+  color:#fff;
+  padding: 5px;
+}
+
+.custom-carousel-indicators .active a::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f111";
+  color:#fff;
+}
+
+.custom-carousel-indicators a:focus{
+  color:#fff;
+  border: 1px solid #fff;
+}
+
+.carousel-control:focus span, .carousel-control:hover span{
+  border: 3px solid #fff;  
+  padding: 5px;
+  width: auto;
+  height: auto;
+} 
+
