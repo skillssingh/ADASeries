@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../CSS/index.css" />
+
+    <title>Role Alert Vs Aria-live</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row mainPageDiv">
+            <div class="col-xs-12">
+                <header>
+                    <h1>Role="alert" Vs Aria-live</h1>
+                </header>
+            </div>
+            <!-- 4 Ways to add role="alert" section -->
+            <!-- Uncomment each section for alerts -->
+
+            <!-- 1. Add role="alert" to HTML element -->
+            <!-- <div role="alert">this is the HTML way</div> -->
+            
+            <!-- 2. Add role="alert" using Javascript -->
+           <!-- <div id="divAlert">This is the alert using javascript</div>
+              -->
+            <!-- 3. Dynamically add an element with role="alert" -->
+            <!-- <div id="divDynamicAlert"></div> -->
+            
+            <!-- 4. Display an elememt role="alert" -->
+            <div role="alert" id="divDisplayAlert" class="displayNone">This is the display method</div>
+
+            <button type="button" id="btnSubmit">Submit</button>
+            <button type="button" id="btnDisplayAlert">Display Alert</button>
+
+
+
+            
+            <!-- 2 Ways to add role="alert" section -->
+
+            <!-- 1. Add aria-live="" to HTML element -->
+            <div aria-live="polite">This is the polite aria live example</div>
+            
+            <!-- 2. Dynamically add text to an element -->
+
+            <div id="divAriaLive" aria-live="polite"></div>
+
+            <button type="button" id="btnAriaLive">Aria Live</button>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#divAlert").attr("role","alert");
+
+        $("#btnSubmit").on("click",function(){
+            $("#divDynamicAlert").append('<div role="alert">This is the dynamically added div role alert</div>')
+        })
+
+        $("#btnDisplayAlert").on("click",function(){
+            $("#divDisplayAlert").removeClass("displayNone");
+        })
+
+        $("#btnAriaLive").on("click",function(){
+            $("#divAriaLive").text("this is the dynamically added text");
+        })
+    })
+</script>
+
+</html>
